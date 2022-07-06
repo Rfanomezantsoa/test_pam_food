@@ -1,0 +1,30 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API food zero app",
+        "description": "All resource to manage food zero app",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api"
+        }
+    ],
+    "paths": {
+        "/food": {
+            "get": {
+                "tags": [
+                    "food"
+                ],
+                "summary": "List of all food",
+                "description": "Display a listing of the resource.",
+                "operationId": "701d88a3be2e2178f82651aa710c0b53",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}

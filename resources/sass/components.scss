@@ -1,0 +1,68 @@
+// TITLE
+h1,h2,h3,h4,h5,h6,a{
+    font-family: var(--fz-font-main) ;
+    font-weight:  700;
+}
+.bg-green{
+    background-color: var(--green);
+}
+.white{
+    color: white !important;
+}
+
+.btn{
+    border-radius: 0%;
+    padding: 11px 40px;
+}
+.btn-outline-white {
+    color: white !important;
+    background-color: var(--green) !important;
+    border: 1px solid white !important;
+}
+.btn-hover-white:hover{
+    color: var(--green)!important;
+    background-color: white!important;
+    border: 1px solid white!important;
+}
+
+
+// NAVIGATION
+.open-icon-nav , .close-icon-nav{
+    width:64px;
+}
+.closer-nav{
+    margin: 30px;
+}
+.fz-nav{
+    min-height: 100vh;
+    z-index: 10000;
+    width: 100%;
+    position: fixed;
+    top:0%;
+    left:0%;
+}
+
+.nav{
+    height: auto;
+}
+.nav li{
+    color: white;
+}
+.nav-item{
+    font-family: var(--fz-font-main);
+    font-size: 35px;
+    color: white;
+}
+.active-link, .router-link-active{
+    color: var(--green-50)!important;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+// HEADER
+
+
