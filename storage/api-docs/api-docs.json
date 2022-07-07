@@ -11,17 +11,184 @@
         }
     ],
     "paths": {
-        "/food": {
+        "/headlineheros": {
             "get": {
                 "tags": [
-                    "food"
+                    "headlineheros"
                 ],
-                "summary": "List of all food",
-                "description": "Display a listing of the resource.",
-                "operationId": "701d88a3be2e2178f82651aa710c0b53",
+                "summary": "List all headline ",
+                "operationId": "18d25901aea4a863db4380f3edfac36f",
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/headlineheros/{headlinehero}": {
+            "get": {
+                "tags": [
+                    "headlinehero"
+                ],
+                "summary": "get headlinehero by his name",
+                "operationId": "3f6575bd550b6f7a53971d939ac1d24b",
+                "parameters": [
+                    {
+                        "name": "headlinehero",
+                        "in": "path",
+                        "description": "name of the page which headline belong like : home,contact, reservation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/imageboxes": {
+            "get": {
+                "tags": [
+                    "ImageBox"
+                ],
+                "summary": "List all image box Desc order",
+                "operationId": "cf4e687807fd65041c64016f9136af44",
+                "parameters": [
+                    {
+                        "name": "take",
+                        "in": "query",
+                        "description": "nomber of element to take imagebox loaded, if take parametter empty the api return all image dox  ",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/articles/": {
+            "get": {
+                "tags": [
+                    "article"
+                ],
+                "summary": "get recent article with tronced text with minim information",
+                "operationId": "72e5222281172c142bf8443dfac95258",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "to determine how many article to load",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/articles/{article}": {
+            "get": {
+                "tags": [
+                    "article"
+                ],
+                "summary": "get article details",
+                "operationId": "da45b2b09209f4cfb0b478cb36ef5fe1",
+                "parameters": [
+                    {
+                        "name": "article",
+                        "in": "path",
+                        "description": "id of article to load",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/menus": {
+            "get": {
+                "tags": [
+                    "Menu"
+                ],
+                "summary": "List of all menu with food",
+                "description": "Display a listing of the resource.",
+                "operationId": "bd2eea331be93e0ce3b67cd1c3a206e4",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/menus/{menu}": {
+            "get": {
+                "tags": [
+                    "Menu"
+                ],
+                "summary": "Menu with foods get by id",
+                "operationId": "4c643ffec250b58dcf04427902c3aba9",
+                "parameters": [
+                    {
+                        "name": "menu",
+                        "in": "path",
+                        "description": "id of menu",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/menus/name/{label}": {
+            "get": {
+                "tags": [
+                    "Menu"
+                ],
+                "summary": "Menu with foods get by id",
+                "operationId": "aa28fdb7802c5a5d32c9af4b21836232",
+                "parameters": [
+                    {
+                        "name": "label",
+                        "in": "path",
+                        "description": "label of menu like starters, mains, ourmenu,pastriesdrinks",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
                     }
                 }
             }

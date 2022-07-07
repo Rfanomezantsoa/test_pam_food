@@ -16,7 +16,7 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->insert([
             [
-                "designation"=>"starter"
+                "designation"=>"breakfast"
             ],
             [
                 "designation"=>"launch"

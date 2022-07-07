@@ -9,17 +9,20 @@ const routes=[
     {
         path:'/',
         name:'home',
-        component: Home
+        component: Home,
+        pros:true
     },
     {
         path:'/menu',
         name:'menu',
-        component: Menu
+        component: Menu,
+        pros:true
     },
     {
         path:'/reservation',
         name:'reservation',
-        component: Reservation
+        component: Reservation,
+        pros:true
     }
 ];
 

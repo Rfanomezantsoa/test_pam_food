@@ -13,14 +13,6 @@ class FoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      *
-     * @OA\Get( path="/food",
-     *      tags={"food"},
-     *      summary="List of all food",
-     *      @OA\Response(
-     *          response=200,
-     *          description="OK"
-     *      )
-     * )
      */
     public function index()
     {

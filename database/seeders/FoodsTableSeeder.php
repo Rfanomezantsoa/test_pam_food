@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\meal\Menu;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,36 +17,58 @@ class FoodsTableSeeder extends Seeder
     {
         $data=[
             [
-                "name"=>"Rillette de Langouste",
-                "description"=>"Rillette de Langouste sur tartare de Mangue, Mousse de pomme au Caviar de Chocolat. SPECIALITE DU CHEF Lobster Rillette on Mango Tartare, Apple mousse and Chocolate Caviar",
+                "name"=>"Deep Sea Snow White Cod Fillet",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$MAINS )->value('id'),
+                "price"=>20
             ],
             [
-                "name"=>"Terrine de Foie Gras",
-                "description"=>"Terrine de Foie Gras Maison à la Truffe de Cacao et Gingembre. SPECIALITE DU CHEF Homemade Foie Gras with Cocoa Truffe and Ginger"
+                "name"=>"Steak With Rosemary Butter",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$MAINS )->value('id'),
+                "price"=>22
             ],
             [
-                "name"=>"Poele de Magret de Canard",
-                "description"=>"Poêlé de Magret de Canard, sauce chocolat, Arancini et Pomme fruit caramélisée. SPECIALITE DU CHEF. Seared Duck Breast, Chocolat Sauce, Arancini and Caramelized Apple"
+                "name"=>"Steaks with Grilled Kimchi",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$MAINS )->value('id'),
+                "price"=>20
             ],
             [
-                "name"=>"Gambas Poele au Chocolat",
-                "description"=>"Gambas Poêlé au Chocolat, Arancini et Pomme fruit caramélisée. SPECIALITE DU CHEF Seared Prawns with Chocolate sauce, Arancini and Caramelized Apple"
+                "name"=>"Cucumber Salad",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$STARTERS )->value('id'),
+                "price"=>20
             ],
             [
-                "name"=>"Larme au chocolat blanc",
-                "description"=>"Larme au chocolat blanc et marmelade de fruit, caviar de cacao. SPECIALITE DU CHEF White chocolate tear and fruits marmelade, cocoa caviar"
+                "name"=>" Basil Pancakes",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$STARTERS )->value('id'),
+                "price"=>18
             ],
             [
-                "name"=>"Mousse de litchi sur son biscuit",
-                "description"=>"Mousse de litchi sur son biscuit au gingembre, rhum raisin et sorbet mangue. Flitchi mousse on its ginger biscuit, grape rum and mango sorbet   "
+                "name"=>"Grilled Okra and Tomatoes ",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$STARTERS )->value('id'),
+                "price"=>12
             ],
             [
-                "name"=>"La citronnade",
-                "description"=>"A la différence de l’eau citronnée, la citronnade contient un peu de sucre et de l’orange pour adoucir l’acidité du citron. Elle conviendra donc aux clients qui souhaiteraient quelque chose de plus relevé et plus sucré"
+                "name"=>"Wine Pairing",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$PASTRIES_AND_DRINKS )->value('id'),
+                "price"=>158
             ],
             [
-                "name"=>"L’infusion de Fraises",
-                "description"=>"Ingrédients nécessaires : eau, fraises.\nMode de préparation : Mettez des fraises entières dans de l’eau fraîche. Servez immédiatement."
+                "name"=>"Natural Wine Pairing",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$PASTRIES_AND_DRINKS )->value('id'),
+                "price"=>168
+            ],
+            [
+                "name"=>"Whisky Flyer",
+                "description"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                "menu_id"=>Menu::where('label', Menu::$PASTRIES_AND_DRINKS )->value('id'),
+                "price"=>90
             ]
         ];
         DB::table("foods")->insert($data);

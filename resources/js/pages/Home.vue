@@ -4,23 +4,22 @@
             <section class="fz-header">
                 <header class="header">
                     <div class="head-content">
-
                         <div class="headline_hero">
-                            <h1 class="title">
-                                Healthy Eating is important part of lifestyle
+                            <h1 class="title" v-text="hero.title">
+
                             </h1>
-                            <div class="sub-title">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu
+                            <div class="sub-title" v-text="hero.subtitle">
+
                             </div>
                         </div>
                         <div class="images">
                             <div class="img-main">
-                              <img :src="'/img/utils/Image-header-home.png'" alt="">
+                              <img :src="'/img/utils/'+hero.image" alt="">
                             </div>
                             <div class="img-collection">
                                 <img :src="'/img/utils/spices1.png'" alt="">
-                                <img :src="'/img/sutils/pices2.png'" alt="">
-                                <img :src="'/img/sutils/pices3.png'" alt="">
+                                <img :src="'/img/utils/pices2.png'" alt="">
+                                <img :src="'/img/utils/pices3.png'" alt="">
                             </div>
                         </div>
                     </div>
@@ -32,21 +31,27 @@
             <section class="image-box ">
                 <div class="fz-card white col-5">
                     <div class="card-body">
-                        <img class="card-img" :src="'/img/utils/box-Image.png'">
-                        <h4 class="card-title">
-                            Start to plan your diet today
+                        <img class="card-img" :src="'/img/utils/'">
+                        <h4 class="card-title" >
+                            <li v-for="todo in imageboxes">
+                                {{ todo }}
+                            </li>
                         </h4>
-                        <p class="card-text white">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu
+                        <p class="card-text white" >
+
                         </p>
                     </div>
                 </div>
                 <div class="fz-card white col-3 align-self-strech ">
                     <div class="card-body">
-                        <p class="card-text white mb-auto">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque congue arcu
+                        <h4 class="card-title" >
+
+                        </h4>
+                        <p class="card-text white" >
+
                         </p>
-                        <img class="card-img" :src="'/img/utils/box-Image2.png'">
+
+                        <img class="card-img" :src="'/img/utils/'">
                     </div>
                 </div>
             </section>
@@ -57,7 +62,28 @@
  </div>
 </template>
 <script>
+import { onMounted } from 'vue';
+import useHeadlineHero from '../components/domains/aff/services/headlineservices.js';
+import useImageBox from '../components/domains/aff/services/imagboxservices.js';
+
+
 export default {
 
+    setup(){
+        const { hero , getHeadlineHeroByPage } = useHeadlineHero();
+        const{ imageboxes , getImageBoxes }= useImageBox();
+        onMounted(()=>{
+            getHeadlineHeroByPage('home');
+            getImageBoxes();
+        });
+
+
+        return {
+            imageboxes,
+            hero
+        };
+    },
+
 }
+
 </script>
