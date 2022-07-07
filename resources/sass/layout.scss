@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    height: 100%;
+    color: var(--black) !important;
+    font-family: var(--fz-font-second);
+}
+a{
+    text-decoration: none !important;
+}
+.wrapper{
+    background-size: cover;
+    margin: 0 var(--margin);
+    position: relative;
+}
+.fz-contenaire{
+    width: 100%;
+    position: relative;
+}
+.nav-container{
+    padding: 1.5rem 0px;
+}

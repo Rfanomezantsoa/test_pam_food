@@ -1,0 +1,326 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API food zero app",
+        "description": "All resource to manage food zero app",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api"
+        }
+    ],
+    "paths": {
+        "/headlineheros": {
+            "get": {
+                "tags": [
+                    "headlineheros"
+                ],
+                "summary": "List all headline ",
+                "operationId": "18d25901aea4a863db4380f3edfac36f",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/headlineheros/{headlinehero}": {
+            "get": {
+                "tags": [
+                    "headlinehero"
+                ],
+                "summary": "get headlinehero by his name",
+                "operationId": "3f6575bd550b6f7a53971d939ac1d24b",
+                "parameters": [
+                    {
+                        "name": "headlinehero",
+                        "in": "path",
+                        "description": "name of the page which headline belong like : home,contact, reservation",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/imageboxes/": {
+            "get": {
+                "tags": [
+                    "ImageBox"
+                ],
+                "summary": "List all image box Desc order",
+                "operationId": "56b34a437ae809007ad3091f874f2ea2",
+                "parameters": [
+                    {
+                        "name": "take",
+                        "in": "query",
+                        "description": "nomber of element to take imagebox loaded, if take parametter empty the api return all image dox  ",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/articles/": {
+            "get": {
+                "tags": [
+                    "article"
+                ],
+                "summary": "get recent article with tronced text with minimum information",
+                "operationId": "72e5222281172c142bf8443dfac95258",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "to determine how many article to load",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/articles/{article}": {
+            "get": {
+                "tags": [
+                    "article"
+                ],
+                "summary": "get article details",
+                "operationId": "da45b2b09209f4cfb0b478cb36ef5fe1",
+                "parameters": [
+                    {
+                        "name": "article",
+                        "in": "path",
+                        "description": "id of article to load",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/menus": {
+            "get": {
+                "tags": [
+                    "Menu"
+                ],
+                "summary": "List of all menu with food",
+                "description": "Display a listing of the resource.",
+                "operationId": "bd2eea331be93e0ce3b67cd1c3a206e4",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            }
+        },
+        "/menus/{menu}": {
+            "get": {
+                "tags": [
+                    "Menu"
+                ],
+                "summary": "Menu with foods get by id",
+                "operationId": "4c643ffec250b58dcf04427902c3aba9",
+                "parameters": [
+                    {
+                        "name": "menu",
+                        "in": "path",
+                        "description": "id of menu",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/menus/name/{label}": {
+            "get": {
+                "tags": [
+                    "Menu"
+                ],
+                "summary": "Menu with foods get by id",
+                "operationId": "aa28fdb7802c5a5d32c9af4b21836232",
+                "parameters": [
+                    {
+                        "name": "label",
+                        "in": "path",
+                        "description": "label of menu like starters, mains, ourmenu,pastriesdrinks",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "Menu not found"
+                    }
+                }
+            }
+        },
+        "/reservations/": {
+            "get": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " reservations list",
+                "operationId": "40fbd75194031e534b1242634ff47007",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": "add reservation",
+                "operationId": "d66701b71191f76a7451915e27343d03",
+                "parameters": [
+                    {
+                        "name": "first_name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "date_reservation",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "hour_reservation",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "number",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful"
+                    },
+                    "505": {
+                        "description": "Operation failed!"
+                    }
+                }
+            }
+        },
+        "/reservations/validate/{reservation}": {
+            "delete": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " validate reservation  if his status is en attente",
+                "operationId": "8bd6f5407bc21a62ab88bdec507fe446",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "505": {
+                        "description": "Operation failed"
+                    }
+                }
+            }
+        },
+        "/reservations/unvalidate/{reservation}": {
+            "delete": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " unvalidate reservation if his status is en attente",
+                "operationId": "ea4132aa4e2f4f7859d8f2346b0bed79",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "505": {
+                        "description": "Operation failed"
+                    }
+                }
+            }
+        },
+        "/reservations/{reservation}": {
+            "delete": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " delete reservation",
+                "operationId": "a9d843b5923caa8b2a5f5c7743b7ab52",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        }
+    }
+}

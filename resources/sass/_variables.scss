@@ -1,0 +1,28 @@
+// Body
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+:root{
+    --green : #233000;
+    --green-70 : #5E6600;
+    --green-50 : #9CAA00;
+    --green-light: #EBF0E4;
+
+    --black: #000000;
+    --black-75: #4D4D4D;
+    --grey: #B0B0B0;
+    --white:#FFFFFF;
+
+    --fz-font-main:"Rufina";
+    --fz-font-second:"Lato",sans-serif;
+    --margin: 74px ;
+}
+$body-bg: #FFFFFF;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+
+
+
