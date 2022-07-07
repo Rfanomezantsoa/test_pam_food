@@ -17,10 +17,6 @@ class HeadlineHeroController extends Controller
      *         response="200",
      *         description="Successful"
      *      ),
-     *      @OA\Response(
-     *         response="404",
-     *         description="not found"
-     *      ),
      * )
      */
     public function index()
@@ -61,7 +57,12 @@ class HeadlineHeroController extends Controller
     public function show( $headlineHero)
     {
 
-        return HeadlineHero::where('page', '=',strtolower($headlineHero))->firstOrfail()->toJson(JSON_PRETTY_PRINT);
+        $headline = HeadlineHero::where('page', '=',strtolower($headlineHero))->first();
+        if(!$headline){
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+
+        return $headline->toJson(JSON_PRETTY_PRINT);
     }
 
 

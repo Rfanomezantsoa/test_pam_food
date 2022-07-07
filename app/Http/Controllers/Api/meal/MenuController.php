@@ -72,12 +72,16 @@ class MenuController extends Controller
      *      ),
      *      @OA\Response(
      *         response="404",
-     *         description="not found"
+     *         description="Menu not found"
      *      ),
      * )
      */
     public function findbyname(string $label){
 
-        return Menu::with('foods')->where('label','=',$label)->first();
+        $menu=Menu::with('foods')->where('label','=',$label)->first();
+        if(!$menu){
+            return response()->json(['message' => 'Menu not found'], 404);
+        }
+        return $menu;
     }
 }

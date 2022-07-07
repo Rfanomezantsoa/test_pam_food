@@ -9,7 +9,6 @@ class Menu extends Model
 {
     use HasFactory;
 
-    protected $table="menus";
     public static $STARTERS ='starters';
     public static $MAINS='mains';
     public static $PASTRIES_AND_DRINKS='pastriesdrinks';

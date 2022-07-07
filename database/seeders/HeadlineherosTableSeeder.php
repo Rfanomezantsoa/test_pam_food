@@ -37,7 +37,7 @@ class HeadlineherosTableSeeder extends Seeder
 
         ];
 
-        DB::table('headlineheros')->insert($data);
+        DB::table('headline_heros')->insert($data);
 
     }
 }

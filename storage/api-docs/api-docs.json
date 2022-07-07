@@ -21,9 +21,6 @@
                 "responses": {
                     "200": {
                         "description": "Successful"
-                    },
-                    "404": {
-                        "description": "not found"
                     }
                 }
             }
@@ -53,13 +50,13 @@
                 }
             }
         },
-        "/imageboxes": {
+        "/imageboxes/": {
             "get": {
                 "tags": [
                     "ImageBox"
                 ],
                 "summary": "List all image box Desc order",
-                "operationId": "cf4e687807fd65041c64016f9136af44",
+                "operationId": "56b34a437ae809007ad3091f874f2ea2",
                 "parameters": [
                     {
                         "name": "take",
@@ -71,9 +68,6 @@
                 "responses": {
                     "200": {
                         "description": "Successful"
-                    },
-                    "404": {
-                        "description": "not found"
                     }
                 }
             }
@@ -83,7 +77,7 @@
                 "tags": [
                     "article"
                 ],
-                "summary": "get recent article with tronced text with minim information",
+                "summary": "get recent article with tronced text with minimum information",
                 "operationId": "72e5222281172c142bf8443dfac95258",
                 "parameters": [
                     {
@@ -96,9 +90,6 @@
                 "responses": {
                     "200": {
                         "description": "Successful"
-                    },
-                    "404": {
-                        "description": "not found"
                     }
                 }
             }
@@ -180,6 +171,144 @@
                         "name": "label",
                         "in": "path",
                         "description": "label of menu like starters, mains, ourmenu,pastriesdrinks",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "Menu not found"
+                    }
+                }
+            }
+        },
+        "/reservations/": {
+            "get": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " reservations list",
+                "operationId": "40fbd75194031e534b1242634ff47007",
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": "add reservation",
+                "operationId": "d66701b71191f76a7451915e27343d03",
+                "parameters": [
+                    {
+                        "name": "first_name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "last_name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "required": false
+                    },
+                    {
+                        "name": "phone",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "date_reservation",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "hour_reservation",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "name": "number",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful"
+                    },
+                    "505": {
+                        "description": "Operation failed!"
+                    }
+                }
+            }
+        },
+        "/reservations/validate/{reservation}": {
+            "delete": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " validate reservation  if his status is en attente",
+                "operationId": "8bd6f5407bc21a62ab88bdec507fe446",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "505": {
+                        "description": "Operation failed"
+                    }
+                }
+            }
+        },
+        "/reservations/unvalidate/{reservation}": {
+            "delete": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " unvalidate reservation if his status is en attente",
+                "operationId": "ea4132aa4e2f4f7859d8f2346b0bed79",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "505": {
+                        "description": "Operation failed"
+                    }
+                }
+            }
+        },
+        "/reservations/{reservation}": {
+            "delete": {
+                "tags": [
+                    "reservation"
+                ],
+                "summary": " delete reservation",
+                "operationId": "a9d843b5923caa8b2a5f5c7743b7ab52",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
                         "required": true
                     }
                 ],

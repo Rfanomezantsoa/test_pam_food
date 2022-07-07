@@ -14,13 +14,13 @@ class CreateImageBoxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('imageboxes', function (Blueprint $table) {
+        Schema::create('image_boxes', function (Blueprint $table) {
             $table->id();
             $table->string('title',255)->nullable()->default('');
             $table->text('description')->nullable();
             $table->string('image',255);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
@@ -31,6 +31,6 @@ class CreateImageBoxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imageboxes');
+        Schema::dropIfExists('image_boxes');
     }
 }

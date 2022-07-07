@@ -28,6 +28,6 @@ class ImageboxesTableSeeder extends Seeder
 
         ];
 
-        DB::table('imageboxes')->insert($data);
+        DB::table('image_boxes')->insert($data);
     }
 }

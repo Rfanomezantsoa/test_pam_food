@@ -10,7 +10,6 @@ class ImageBox extends Model
 {
     use HasFactory;
 
-    protected $table='imageboxes';
     protected $fillable=[
         "image",
         "title",

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ImageBoxController extends Controller
 {
 
-    /** @OA\Get( path="/imageboxes",
+    /** @OA\Get( path="/imageboxes/",
      *      tags={"ImageBox"},
      *      summary="List all image box Desc order",
      *      @OA\Parameter(
@@ -22,17 +22,13 @@ class ImageBoxController extends Controller
      *     @OA\Response(
      *         response="200",
      *         description="Successful"
-     *      ),
-     *      @OA\Response(
-     *         response="404",
-     *         description="not found"
-     *      ),
-     * )
+     *      )
+     * ),
      */
     public function index(Request $request)
     {
-        $temp = new ImageBox();
-        $query= $temp->getQuery()->orderBy('id', 'desc');
+
+        $query= ImageBox::orderByDesc('id');
         if($request->has('take')){
             $take = $request->input('take');
             $query->limit($take);

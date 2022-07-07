@@ -9,7 +9,6 @@ class HeadlineHero extends Model
 {
     use HasFactory;
 
-    protected $table='headlineheros';
     protected $fillable=[
         "page",
         "title",

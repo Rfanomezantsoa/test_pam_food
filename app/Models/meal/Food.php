@@ -9,7 +9,6 @@ class Food extends Model
 {
     use HasFactory;
 
-    protected $table="foods";
     public $timestamps = true;
     protected $fillable = [
         'name',
