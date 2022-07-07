@@ -6,6 +6,10 @@
         Vujs3
 
 # Installation
-    php artisan install
+    - for laravel 
+        composer install install
+    - for vue 
+        npm  install
 
-
+# run
+    npm run dev
